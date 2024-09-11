@@ -1,0 +1,12 @@
+{
+  "name": "google-ad-generator",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
