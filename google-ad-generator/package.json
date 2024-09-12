@@ -6,9 +6,12 @@
     "build:client": "cd client && npm install && npm run build",
     "build:server": "cd server && npm install",
     "build": "npm run build:client && npm run build:server",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
