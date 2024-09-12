@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "build:client": "cd client && npm install && npm run build",
+    "build:server": "cd server && npm install",
+    "build": "npm run build:client && npm run build:server",
     "postinstall": "npm run build"
   },
   "dependencies": {
