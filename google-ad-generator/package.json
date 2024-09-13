@@ -2,14 +2,16 @@
   "name": "google-ad-generator",
   "version": "1.0.0",
   "scripts": {
-    "start": "node app.js",
-    "build:client": "cd client && npm install && npm run build",
-    "build:server": "cd server && npm install",
-    "build": "npm run build:client && npm run build:server",
-    "heroku-postbuild": "npm run build"
+    "start": "node server/src/index.js",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\""
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   },
   "engines": {
     "node": "14.x"
