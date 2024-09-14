@@ -7,7 +7,13 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Enable CORS for all routes
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CLIENT_URL || 'https://ai-ad-generator-client-static-site.onrender.com/',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 

@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server/src/index.js",
+    "start:dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
     "build": "npm run build:client && npm run build:server",
     "build:client": "cd client && npm install && npm run build",
-    "build:server": "cd server && npm install",
-    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\""
+    "build:server": "cd server && npm install"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -14,8 +14,5 @@
   },
   "devDependencies": {
     "concurrently": "^6.2.0"
-  },
-  "engines": {
-    "node": "14.x"
   }
 }
